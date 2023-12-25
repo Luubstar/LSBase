@@ -1,0 +1,13 @@
+{
+    "java.project.referencedLibraries": [
+      "lsbase/src/dependencias/lib/*.jar",
+      "lsbase/src/dependencias/sqlite-jdbc-3.43.2.2.jar",
+      "lsbase/src/dependencias/slf4j-api-1.7.32.jar",
+      "lsbase/src/dependencias/slf4j-api-2.0.9.jar",
+      "lsbase/src/dependencias/logback-classic-1.4.11.jar",
+      "lsbase/src/dependencias/logback-core-1.4.11.jar"
+    ],
+    "java.project.sourcePaths": [
+      "lsbase/src/main/java/es/lsbase"
+    ]
+  }

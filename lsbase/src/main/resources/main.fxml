@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="715.0" prefWidth="998.0" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="497.0" prefWidth="1000.0" VBox.vgrow="ALWAYS">
+         <children>
+            <TabPane fx:id="panelDeFondo" layoutX="-2.0" prefHeight="715.0" prefWidth="1000.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab fx:id="tabTabla">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="562.0" prefWidth="1000.0">
+                           <children>
+                              <TableView fx:id="tablaPrincipal" layoutX="30.0" layoutY="84.0" prefHeight="571.0" prefWidth="947.0">
+                                <columns>
+                                  <TableColumn fx:id="nombreColumna" prefWidth="75.0" text="Nombre" />
+                                    <TableColumn fx:id="apellido1Columna" prefWidth="75.0" text="1º Apellido" />
+                                    <TableColumn fx:id="apellido2Columna" prefWidth="75.0" text="2º Apellido" />
+                                    <TableColumn fx:id="telefono1Columna" prefWidth="75.0" text="Telefono" />
+                                    <TableColumn fx:id="telefono2Columna" prefWidth="75.0" text="2º Telefono" />
+                                    <TableColumn fx:id="dniColumna" prefWidth="75.0" text="DNI" />
+                                    <TableColumn fx:id="correoColumna" prefWidth="75.0" text="Correo" />
+                                    <TableColumn fx:id="direccionSuministroColumna" prefWidth="75.0" text="Direccion de suministro" />
+                                    <TableColumn fx:id="patioColumna" prefWidth="75.0" text="Patio" />
+                                    <TableColumn fx:id="puertaColumna" prefWidth="75.0" text="Puerta" />
+                                    <TableColumn fx:id="direccionCorrespondenciaColumna" prefWidth="75.0" text="Direccion de correspondencia" />
+                                    <TableColumn fx:id="codigoPostalColumna" prefWidth="75.0" text="Codigo postal" />
+                                    <TableColumn fx:id="poblacionColumna" prefWidth="75.0" text="Poblacion" />
+                                    <TableColumn fx:id="provinciaColumna" prefWidth="75.0" text="Provincia" />
+                                    <TableColumn fx:id="cupsColumna" prefWidth="75.0" text="CUPS" />
+                                    <TableColumn fx:id="numeroCuentaColumna" prefWidth="75.0" text="Numero de cuenta" />
+                                    <TableColumn fx:id="anexoColumna" prefWidth="75.0" text="Anexo" />
+                                    <TableColumn fx:id="tarifaColumna" prefWidth="75.0" text="Tarifa" />
+                                    <TableColumn fx:id="consumoColumna" prefWidth="75.0" text="Consumo" />
+                                    <TableColumn fx:id="companiaColumna" prefWidth="75.0" text="Compañia" />
+                                    <TableColumn fx:id="comisionColumna" prefWidth="75.0" text="Comision" />
+                                    <TableColumn fx:id="activacionColumna" prefWidth="75.0" text="Activacion" />
+                                    <TableColumn fx:id="personaAutColumna" prefWidth="75.0" text="Persona autorizada" />
+                                    <TableColumn fx:id="dniAutColumna" prefWidth="75.0" text="DNI autorizado" />
+                                    <TableColumn fx:id="telefonoAutColumna" prefWidth="75.0" text="Telefono autorizado" />
+                                    <TableColumn fx:id="anotacionColumna" prefWidth="75.0" text="Anotacion" />
+                                </columns>
+                              </TableView>
+                              <TextField fx:id="busquedaTexto" layoutX="31.0" layoutY="34.0" prefHeight="37.0" prefWidth="874.0" promptText="Introduce tu búsqueda..." />
+                              <Button fx:id="busquedaBoton" layoutX="905.0" layoutY="34.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="71.0" text="Buscar" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab fx:id="tabAdd">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="702.0" prefWidth="1000.0">
+                           <children>
+                              <GridPane layoutX="8.0" layoutY="8.0" prefHeight="668.0" prefWidth="625.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Group GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+                                       <children>
+                                          <Text layoutX="2.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre" wrappingWidth="282.13000106811523" />
+                                          <TextField fx:id="lineNombre" layoutY="25.897000312805176" prefHeight="26.0" prefWidth="283.0" />
+                                          <Line endX="182.0" endY="0.897003173828125" layoutX="101.0" layoutY="25.0" startX="-100.0" />
+                                       </children>
+                                    </Group>
+                                    <Group GridPane.rowIndex="1">
+                                       <children>
+                                          <Text layoutX="2.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1º Apellido" wrappingWidth="282.13000106811523" />
+                                          <TextField fx:id="linePApellido" layoutY="25.897000312805176" prefHeight="26.0" prefWidth="283.0" />
+                                          <Line endX="182.0" endY="0.897003173828125" layoutX="101.0" layoutY="25.0" startX="-100.0" />
+                                       </children>
+                                    </Group>
+                                    <Group GridPane.rowIndex="2">
+                                       <children>
+                                          <Text layoutX="2.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2º Apellido" wrappingWidth="282.13000106811523" />
+                                          <TextField fx:id="lineSApellido" layoutY="25.897000312805176" prefHeight="26.0" prefWidth="283.0" />
+                                          <Line endX="182.0" endY="0.897003173828125" layoutX="101.0" layoutY="25.0" startX="-100.0" />
+                                       </children>
+                                    </Group>
+                                    <Group GridPane.rowIndex="3">
+                                       <children>
+                                          <Text layoutX="2.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefono" wrappingWidth="282.13000106811523" />
+                                          <TextField fx:id="linePTelefono" layoutY="25.897000312805176" prefHeight="26.0" prefWidth="283.0" />
+                                          <Line endX="182.0" endY="0.897003173828125" layoutX="101.0" layoutY="25.0" startX="-100.0" />
+                                       </children>
+                                    </Group>
+                                    <Group GridPane.rowIndex="4">
+                                       <children>
+                                          <Text layoutX="2.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2º Telefono" wrappingWidth="282.13000106811523" />
+                                          <TextField fx:id="lineSTelefonp" layoutY="25.897000312805176" prefHeight="26.0" prefWidth="283.0" />
+                                          <Line endX="182.0" endY="0.897003173828125" layoutX="101.0" layoutY="25.0" startX="-100.0" />
+                                       </children>
+                                    </Group>
+                                    <Group GridPane.rowIndex="5">
+                                       <children>
+                                          <Text layoutX="2.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DNI" wrappingWidth="282.13000106811523" />
+                                          <TextField fx:id="lineDNI" layoutY="25.897000312805176" prefHeight="26.0" prefWidth="283.0" />
+                                          <Line endX="182.0" endY="0.897003173828125" layoutX="101.0" layoutY="25.0" startX="-100.0" />
+                                       </children>
+                                    </Group>
+                                    <Group GridPane.rowIndex="6">
+                                       <children>
+                                          <Text layoutX="2.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Correo electronico" wrappingWidth="282.13000106811523" />
+                                          <TextField fx:id="lineEmail" layoutY="25.897000312805176" prefHeight="26.0" prefWidth="283.0" />
+                                          <Line endX="182.0" endY="0.897003173828125" layoutX="101.0" layoutY="25.0" startX="-100.0" />
+                                       </children>
+                                    </Group>
+                                    <Group GridPane.rowIndex="7">
+                                       <children>
+                                          <Text layoutX="2.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Direccion de suministro" wrappingWidth="282.13000106811523" />
+                                          <TextField fx:id="lineDireccion" layoutY="25.897000312805176" prefHeight="26.0" prefWidth="283.0" />
+                                          <Line endX="182.0" endY="0.897003173828125" layoutX="101.0" layoutY="25.0" startX="-100.0" />
+                                       </children>
+                                    </Group>
+                                    <Group GridPane.rowIndex="8">
+                                       <children>
+                                          <Text layoutX="2.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patio" wrappingWidth="282.13000106811523" />
+                                          <TextField fx:id="linePatio" layoutY="25.897000312805176" prefHeight="26.0" prefWidth="283.0" />
+                                          <Line endX="182.0" endY="0.897003173828125" layoutX="101.0" layoutY="25.0" startX="-100.0" />
+                                       </children>
+                                    </Group>
+                                    <Group GridPane.rowIndex="9">
+                                       <children>
+                                          <Text layoutX="2.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Puerta" wrappingWidth="282.13000106811523" />
+                                          <TextField fx:id="linePuerta" layoutY="25.897000312805176" prefHeight="26.0" prefWidth="283.0" />
+                                          <Line endX="182.0" endY="0.897003173828125" layoutX="101.0" layoutY="25.0" startX="-100.0" />
+                                       </children>
+                                    </Group>
+                                    <Group GridPane.rowIndex="10">
+                                       <children>
+                                          <Text layoutX="2.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Direccion de correspondencia" wrappingWidth="282.13000106811523" />
+                                          <TextField fx:id="lineCorrespondencia" layoutY="25.897000312805176" prefHeight="26.0" prefWidth="283.0" />
+                                          <Line endX="182.0" endY="0.897003173828125" layoutX="101.0" layoutY="25.0" startX="-100.0" />
+                                       </children>
+                                    </Group>
+                                    <Group GridPane.rowIndex="11">
+                                       <children>
+                                          <Text layoutX="2.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Codigo postal" wrappingWidth="282.13000106811523" />
+                                          <TextField fx:id="lineCodPost" layoutY="25.897000312805176" prefHeight="26.0" prefWidth="283.0" />
+                                          <Line endX="182.0" endY="0.897003173828125" layoutX="101.0" layoutY="25.0" startX="-100.0" />
+                                       </children>
+                                    </Group>
+                                    <Group GridPane.rowIndex="12">
+                                       <children>
+                                          <Text layoutX="2.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Poblacion" wrappingWidth="282.13000106811523" />
+                                          <TextField fx:id="linePoblacion" layoutY="25.897000312805176" prefHeight="26.0" prefWidth="283.0" />
+                                          <Line endX="182.0" endY="0.897003173828125" layoutX="101.0" layoutY="25.0" startX="-100.0" />
+                                       </children>
+                                    </Group>
+                                    <Group GridPane.columnIndex="1">
+                                       <children>
+                                          <Text layoutX="2.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Provincia" wrappingWidth="282.13000106811523" />
+                                          <TextField fx:id="lineProvincia" layoutY="25.897000312805176" prefHeight="26.0" prefWidth="283.0" />
+                                          <Line endX="182.0" endY="0.897003173828125" layoutX="101.0" layoutY="25.0" startX="-100.0" />
+                                       </children>
+                                    </Group>
+                                    <Group GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <children>
+                                          <Text layoutX="2.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CUPS" wrappingWidth="282.13000106811523" />
+                                          <TextField fx:id="lineCUPS" layoutY="25.897000312805176" prefHeight="26.0" prefWidth="283.0" />
+                                          <Line endX="182.0" endY="0.897003173828125" layoutX="101.0" layoutY="25.0" startX="-100.0" />
+                                       </children>
+                                    </Group>
+                                    <Group GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <children>
+                                          <Text layoutX="2.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Numero de cuenta" wrappingWidth="282.13000106811523" />
+                                          <TextField fx:id="lineNumCuenta" layoutY="25.897000312805176" prefHeight="26.0" prefWidth="283.0" />
+                                          <Line endX="182.0" endY="0.897003173828125" layoutX="101.0" layoutY="25.0" startX="-100.0" />
+                                       </children>
+                                    </Group>
+                                    <Group GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                       <children>
+                                          <Text layoutX="2.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Anexo" wrappingWidth="282.13000106811523" />
+                                          <TextField fx:id="lineAnexo" layoutY="25.897000312805176" prefHeight="26.0" prefWidth="283.0" />
+                                          <Line endX="182.0" endY="0.897003173828125" layoutX="101.0" layoutY="25.0" startX="-100.0" />
+                                       </children>
+                                    </Group>
+                                    <Group GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                       <children>
+                                          <Text layoutX="2.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tarifa" wrappingWidth="282.13000106811523" />
+                                          <TextField fx:id="lineTarifa" layoutY="25.897000312805176" prefHeight="26.0" prefWidth="283.0" />
+                                          <Line endX="182.0" endY="0.897003173828125" layoutX="101.0" layoutY="25.0" startX="-100.0" />
+                                       </children>
+                                    </Group>
+                                    <Group GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                       <children>
+                                          <Text layoutX="2.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Consumo" wrappingWidth="282.13000106811523" />
+                                          <TextField fx:id="lineConsumo" layoutY="25.897000312805176" prefHeight="26.0" prefWidth="283.0" />
+                                          <Line endX="182.0" endY="0.897003173828125" layoutX="101.0" layoutY="25.0" startX="-100.0" />
+                                       </children>
+                                    </Group>
+                                    <Group GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                       <children>
+                                          <Text layoutX="2.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Compañia" wrappingWidth="282.13000106811523" />
+                                          <TextField fx:id="lineCompania" layoutY="25.897000312805176" prefHeight="26.0" prefWidth="283.0" />
+                                          <Line endX="182.0" endY="0.897003173828125" layoutX="101.0" layoutY="25.0" startX="-100.0" />
+                                       </children>
+                                    </Group>
+                                    <Group GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                       <children>
+                                          <Text layoutX="2.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Comision" wrappingWidth="282.13000106811523" />
+                                          <TextField fx:id="lineComision" layoutY="25.897000312805176" prefHeight="26.0" prefWidth="283.0" />
+                                          <Line endX="182.0" endY="0.897003173828125" layoutX="101.0" layoutY="25.0" startX="-100.0" />
+                                       </children>
+                                    </Group>
+                                    <Group GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                       <children>
+                                          <Text layoutX="2.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Activacion" wrappingWidth="282.13000106811523" />
+                                          <TextField fx:id="lineActivacion" layoutY="25.897000312805176" prefHeight="26.0" prefWidth="283.0" />
+                                          <Line endX="182.0" endY="0.897003173828125" layoutX="101.0" layoutY="25.0" startX="-100.0" />
+                                       </children>
+                                    </Group>
+                                    <Group GridPane.columnIndex="1" GridPane.rowIndex="9">
+                                       <children>
+                                          <Text layoutX="2.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Persona autorizada" wrappingWidth="282.13000106811523" />
+                                          <TextField fx:id="linePersonaAut" layoutY="25.897000312805176" prefHeight="26.0" prefWidth="283.0" />
+                                          <Line endX="182.0" endY="0.897003173828125" layoutX="101.0" layoutY="25.0" startX="-100.0" />
+                                       </children>
+                                    </Group>
+                                    <Group GridPane.columnIndex="1" GridPane.rowIndex="10">
+                                       <children>
+                                          <Text layoutX="2.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefono autorizado" wrappingWidth="282.13000106811523" />
+                                          <TextField fx:id="lineTelefonoAut" layoutY="25.897000312805176" prefHeight="26.0" prefWidth="283.0" />
+                                          <Line endX="182.0" endY="0.897003173828125" layoutX="101.0" layoutY="25.0" startX="-100.0" />
+                                       </children>
+                                    </Group>
+                                    <Group GridPane.columnIndex="1" GridPane.rowIndex="11">
+                                       <children>
+                                          <Text layoutX="2.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DNI autorizado" wrappingWidth="282.13000106811523" />
+                                          <TextField fx:id="lineDNIAut" layoutY="25.897000312805176" prefHeight="26.0" prefWidth="283.0" />
+                                          <Line endX="182.0" endY="0.897003173828125" layoutX="101.0" layoutY="25.0" startX="-100.0" />
+                                       </children>
+                                    </Group>
+                                 </children>
+                              </GridPane>
+                              <Group layoutX="633.0" layoutY="3.0">
+                                 <children>
+                                    <Text layoutX="1.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Anotaciones" wrappingWidth="348.13000106811523" />
+                                    <Line endX="246.0" layoutX="101.0" layoutY="25.0" startX="-100.0" />
+                                    <TextArea fx:id="lineAnotacion" layoutY="27.0" prefHeight="133.0" prefWidth="347.0" />
+                                 </children>
+                              </Group>
+                              <Pane layoutX="633.0" layoutY="174.0" prefHeight="249.0" prefWidth="346.0" />
+                              <ButtonBar layoutX="646.0" layoutY="435.0" prefHeight="40.0" prefWidth="200.0" />
+                              <Pane layoutX="635.0" layoutY="479.0" prefHeight="187.0" prefWidth="346.0">
+                                 <children>
+                                    <Button fx:id="btnLimpiar" layoutX="14.0" layoutY="77.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="143.0" text="Limpiar" />
+                                    <Button fx:id="btnGuardar" layoutX="189.0" layoutY="77.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="143.0" text="Guardar" />
+                                    <Button fx:id="btnCancelar" disable="true" layoutX="14.0" layoutY="144.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="143.0" text="Cancelar" />
+                                    <Button fx:id="bntEliminar" disable="true" layoutX="189.0" layoutY="144.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="143.0" text="Eliminar" />
+                                 </children>
+                              </Pane>
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab fx:id="tabNotificaciones">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>

@@ -1,0 +1,39 @@
+{
+    // Use IntelliSense para saber los atributos posibles.
+    // Mantenga el puntero para ver las descripciones de los existentes atributos.
+    // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "App",
+            "vmArgs": "--module-path lsbase/src/dependencias/lib --add-modules=javafx.controls,javafx.fxml",
+            "projectName": "LSbase_b30437b1"
+        },
+        {
+            "type": "java",
+            "name": "lsbase/App",
+            "request": "launch",
+            "mainClass": "es.lsbase/App",
+            "vmArgs": "--module-path lsbase/src/dependencias/lib --add-modules=javafx.controls,javafx.fxml",
+            "projectName": "LSbase_fa521b77"
+        },
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "App",
+            "vmArgs": "--module-path lsbase/src/dependencias/lib --add-modules=javafx.controls,javafx.fxml",
+            "projectName": "LSbase_fa521b77"
+        },
+        {
+            "type": "java",
+            "name": "Database",
+            "request": "launch",
+            "mainClass": "System.Database",
+            "projectName": "LSbase_fa521b77"
+        }
+    ]
+}
