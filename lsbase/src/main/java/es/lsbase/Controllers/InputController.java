@@ -1,15 +1,14 @@
+package Controllers;
 import java.io.IOException;
 
 import System.Cliente;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
-public class EditorController{
+public class InputController extends Controller{
 
-    App parent;
     @FXML
     private  TextField lineNombre;
     @FXML
@@ -61,7 +60,7 @@ public class EditorController{
     @FXML
     private  TextField lineDNIAut;
     @FXML
-    private  TextField lineAnotacion;
+    private  TextArea lineAnotacion;
 
 
     @FXML
@@ -77,17 +76,18 @@ public class EditorController{
     private void initialize() throws IOException {System.out.print(lineNombre.getText());}
 
     @FXML
-    public  void editEntry(Cliente c, TabPane panel, Tab destino){
-        panel.getSelectionModel().select(destino);
-        loadInLines(c);
+    public void editEntry(Cliente c, Starter mainController) throws IOException{
+        mainController.changePanel(2);
+        System.out.println(btnCancelar.isDisabled());
         btnLimpiar.setDisable(false);
         btnCancelar.setDisable(false);
         btnEliminar.setDisable(false);
         btnGuardar.setDisable(false);
+        System.out.println(btnCancelar.isDisabled());
     }
 
     @FXML
-    public  void loadInLines(Cliente c){
+    public void loadInLines(Cliente c){
         lineNombre.setText(c.getNombre());
         linePApellido.setText(c.getApellido1());
         lineSApellido.setText(c.getApellido2());
@@ -115,6 +115,4 @@ public class EditorController{
         lineDNIAut.setText(c.getDNIAut());
         lineAnotacion.setText(c.getAnotacion());
     }
-
-    public EditorController(App p){parent = p;}
 }

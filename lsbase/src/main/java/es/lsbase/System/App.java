@@ -1,3 +1,4 @@
+package System;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -7,18 +8,19 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 
+import Controllers.InputController;
+import Controllers.SearcherController;
+
 public class App extends Application {
 
     private static Scene scene;
-    public TableController table;
-    public EditorController editor;
+    public SearcherController table;
+    public InputController editor;
+
+
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader loader = getFXML("main");
-        table = new TableController(this);
-        editor = new EditorController(this);
-        loader.setController(table);
-        
         scene = new Scene(loader.load(), 640, 480);
         stage.setScene(scene);
         stage.show();

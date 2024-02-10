@@ -1,3 +1,5 @@
+package Controllers;
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
@@ -7,24 +9,18 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.util.ArrayList;
 
-public class TableController {
+public class SearcherController extends Controller{
 
-    private App parent;
 
     @FXML
     private TableView<Cliente> tablaPrincipal;
@@ -111,11 +107,11 @@ public class TableController {
     @FXML
     private TextField busquedaTexto;
 
-    @FXML
-    private TabPane panelDeFondo;
-    @FXML Tab tabTabla; 
-    @FXML Tab tabAdd; 
-    @FXML Tab tabNotificaciones; 
+    private static FXMLLoader getFXML(String fxml) throws IOException {
+        File f = new File("lsbase/src/main/resources/" + fxml + ".fxml");
+        FXMLLoader fxmlLoader = new FXMLLoader(f.toURI().toURL());
+        return fxmlLoader;
+    }
 
     @FXML
     private void initialize() throws IOException {
@@ -150,24 +146,6 @@ public class TableController {
         busquedaTexto.setOnKeyTyped(event -> cargarBusqueda(busquedaTexto.getText()));
 
 
-        String directorioTrabajo = System.getProperty("user.dir");
-        File f = new File(directorioTrabajo + "/lsbase/src/main/resources/homeIcon.png");
-        ImageView icon = new ImageView(new Image(new FileInputStream(f)));
-        icon.setFitHeight(32);
-        icon.setFitWidth(32);
-        tabTabla.setGraphic(icon);
-
-        f = new File(directorioTrabajo + "/lsbase/src/main/resources/userIcon.png");
-        icon = new ImageView(new Image(new FileInputStream(f)));
-        icon.setFitHeight(32);
-        icon.setFitWidth(32);
-        tabAdd.setGraphic(icon);
-
-        f = new File(directorioTrabajo + "/lsbase/src/main/resources/notIcon.png");
-        icon = new ImageView(new Image(new FileInputStream(f)));
-        icon.setFitHeight(32);
-        icon.setFitWidth(32);
-        tabNotificaciones.setGraphic(icon);
         cargarBusqueda("");
     }
 
@@ -181,16 +159,27 @@ public class TableController {
             @Override 
             public void handle(MouseEvent event) {
                 if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
-                    //parent.EditController.editEntry(tablaPrincipal.getSelectionModel().getSelectedItem(), panelDeFondo, tabAdd);            
+                    try{
+                        SelectClient(tablaPrincipal.getSelectionModel().getSelectedItem());}
+                    catch(Exception e){}       
                 }
             }
         });
+    }
+
+    private void SelectClient(Cliente c) throws IOException{
+        FXMLLoader FXMLL = getFXML("input");
+        FXMLL.load();
+        InputController controller = FXMLL.getController();
+
+        FXMLL = getFXML("main");
+        FXMLL.load();
+        Starter s = FXMLL.getController();
+        controller.editEntry(c,s);
     }
 
     private void cleanTable(){
         ArrayList<Cliente> c = new ArrayList<Cliente>();
         tablaPrincipal.setItems(FXCollections.observableArrayList(c));
     }
-
-    public TableController(App p){parent = p;}
 }

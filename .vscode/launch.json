@@ -8,6 +8,14 @@
             "type": "java",
             "name": "App",
             "request": "launch",
+            "mainClass": "System.App",
+            "vmArgs": "--module-path lsbase/src/dependencias/lib --add-modules=javafx.controls,javafx.fxml",
+            "projectName": "LSbase_b30437b1"
+        },
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
             "mainClass": "App",
             "vmArgs": "--module-path lsbase/src/dependencias/lib --add-modules=javafx.controls,javafx.fxml",
             "projectName": "LSbase_b30437b1"

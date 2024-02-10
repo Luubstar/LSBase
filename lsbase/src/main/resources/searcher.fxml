@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="689.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.SearcherController">
+   <children>
+      <TableView fx:id="tablaPrincipal" layoutX="30.0" layoutY="84.0" prefHeight="571.0" prefWidth="947.0">
+         <columns>
+            <TableColumn fx:id="nombreColumna" prefWidth="75.0" text="Nombre" />
+            <TableColumn fx:id="apellido1Columna" prefWidth="75.0" text="1º Apellido" />
+            <TableColumn fx:id="apellido2Columna" prefWidth="75.0" text="2º Apellido" />
+            <TableColumn fx:id="telefono1Columna" prefWidth="75.0" text="Telefono" />
+            <TableColumn fx:id="telefono2Columna" prefWidth="75.0" text="2º Telefono" />
+            <TableColumn fx:id="dniColumna" prefWidth="75.0" text="DNI" />
+            <TableColumn fx:id="correoColumna" prefWidth="75.0" text="Correo" />
+            <TableColumn fx:id="direccionSuministroColumna" prefWidth="75.0" text="Direccion de suministro" />
+            <TableColumn fx:id="patioColumna" prefWidth="75.0" text="Patio" />
+            <TableColumn fx:id="puertaColumna" prefWidth="75.0" text="Puerta" />
+            <TableColumn fx:id="direccionCorrespondenciaColumna" prefWidth="75.0" text="Direccion de correspondencia" />
+            <TableColumn fx:id="codigoPostalColumna" prefWidth="75.0" text="Codigo postal" />
+            <TableColumn fx:id="poblacionColumna" prefWidth="75.0" text="Poblacion" />
+            <TableColumn fx:id="provinciaColumna" prefWidth="75.0" text="Provincia" />
+            <TableColumn fx:id="cupsColumna" prefWidth="75.0" text="CUPS" />
+            <TableColumn fx:id="numeroCuentaColumna" prefWidth="75.0" text="Numero de cuenta" />
+            <TableColumn fx:id="anexoColumna" prefWidth="75.0" text="Anexo" />
+            <TableColumn fx:id="tarifaColumna" prefWidth="75.0" text="Tarifa" />
+            <TableColumn fx:id="consumoColumna" prefWidth="75.0" text="Consumo" />
+            <TableColumn fx:id="companiaColumna" prefWidth="75.0" text="Compañia" />
+            <TableColumn fx:id="comisionColumna" prefWidth="75.0" text="Comision" />
+            <TableColumn fx:id="activacionColumna" prefWidth="75.0" text="Activacion" />
+            <TableColumn fx:id="personaAutColumna" prefWidth="75.0" text="Persona autorizada" />
+            <TableColumn fx:id="dniAutColumna" prefWidth="75.0" text="DNI autorizado" />
+            <TableColumn fx:id="telefonoAutColumna" prefWidth="75.0" text="Telefono autorizado" />
+            <TableColumn fx:id="anotacionColumna" prefWidth="75.0" text="Anotacion" />
+         </columns>
+      </TableView>
+      <TextField fx:id="busquedaTexto" layoutX="31.0" layoutY="34.0" prefHeight="37.0" prefWidth="874.0" promptText="Introduce tu búsqueda..." />
+      <Button fx:id="busquedaBoton" layoutX="905.0" layoutY="34.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="71.0" text="Buscar" />
+   </children>
+</AnchorPane>
