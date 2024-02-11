@@ -85,14 +85,26 @@ public class InputController extends Controller{
 
     @FXML
     public void editEntry(Cliente c, Starter mainController) throws IOException{
+        loadInLines(c);
         mainController.changePanel(1);
-        System.out.println(btnCancelar.isDisabled());
         btnLimpiar.setDisable(false);
         btnCancelar.setDisable(false);
         btnEliminar.setDisable(false);
         btnGuardar.setDisable(false);
-        System.out.println(btnCancelar.isDisabled());
+
+        btnCancelar.setOnAction(event -> cancelEntry());
+        btnLimpiar.setOnAction(event -> clean());
     }
+
+    @FXML
+    public void cancelEntry(){
+        clean();
+        btnCancelar.setDisable(true);
+        btnEliminar.setDisable(true);
+        main.iniciador.changePanel(0);
+    }
+
+    public void clean(){loadInLines(new Cliente());}
 
     @FXML
     public void loadInLines(Cliente c){

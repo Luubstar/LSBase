@@ -67,7 +67,7 @@
             <Group GridPane.rowIndex="4">
                <children>
                   <Text layoutX="2.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2º Telefono" wrappingWidth="282.13000106811523" />
-                  <TextField fx:id="lineSTelefonp" layoutY="25.897000312805176" prefHeight="26.0" prefWidth="283.0" />
+                  <TextField fx:id="lineSTelefono" layoutY="25.897000312805176" prefHeight="26.0" prefWidth="283.0" />
                   <Line endX="182.0" endY="0.897003173828125" layoutX="101.0" layoutY="25.0" startX="-100.0" />
                </children>
             </Group>
@@ -227,7 +227,7 @@
             <Button fx:id="btnLimpiar" layoutX="14.0" layoutY="77.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="143.0" text="Limpiar" />
             <Button fx:id="btnGuardar" layoutX="189.0" layoutY="77.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="143.0" text="Guardar" />
             <Button fx:id="btnCancelar" disable="true" layoutX="14.0" layoutY="144.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="143.0" text="Cancelar" />
-            <Button fx:id="bntEliminar" disable="true" layoutX="189.0" layoutY="144.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="143.0" text="Eliminar" />
+            <Button fx:id="btnEliminar" disable="true" layoutX="189.0" layoutY="144.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="143.0" text="Eliminar" />
          </children>
       </Pane>
    </children>
