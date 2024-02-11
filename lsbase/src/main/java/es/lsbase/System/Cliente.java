@@ -1,6 +1,7 @@
 package System;
 
 public class Cliente {
+    private int    ID;
     private String Nombre;
     private String Apellido1;
     private String Apellido2;
@@ -236,11 +237,16 @@ public class Cliente {
         Anotacion = anotacion;
     }
 
-    public Cliente(String Nombre, String Apellido1, String Apellido2, String Telefono1, String Telefono2,
+    public int getID() {
+        return ID;
+    }
+
+    public Cliente(int ID, String Nombre, String Apellido1, String Apellido2, String Telefono1, String Telefono2,
                    String DNI, String CorreoElectronico, String DireccionSuministro, String Patio, String Puerta,
                    String DireccionCorrespondencia, int CodigoPostal, String Poblacion, String Provincia, String CUPS,
                    String NumeroCuenta, String Anexo, String Tarifa, String Consumo, String Compania, String Comision,
                    String Activacion, String PersonaAut, String DNIAut, String TelefonoAut, String Anotacion) {
+        this.ID = ID;
         this.Nombre = Nombre;
         this.Apellido1 = Apellido1;
         this.Apellido2 = Apellido2;
@@ -270,4 +276,13 @@ public class Cliente {
     }
     
     public Cliente(){}
+
+    @Override
+    public String toString(){
+        return ("\""+ getID() +"\",\""+ getNombre() +"\",\""+ getApellido1() +"\",\""+ getApellido2() +"\",\""+ getTelefono1() +"\",\""+ getTelefono2() +"\",\""+ 
+        getDNI() +"\",\""+ getCorreoElectronico() +"\",\""+ getDireccionSuministro() +"\",\""+ getPatio() +"\",\""+ getPuerta() +"\",\""+ getDireccionCorrespondencia()
+        +"\",\""+ getCodigoPostal() +"\",\""+ getPoblacion() +"\",\""+ getProvincia() +"\",\""+ getCUPS() +"\",\""+ getNumeroCuenta() +"\",\""+ getAnexo() +"\",\""+ 
+        getTarifa() +"\",\""+ getConsumo() +"\",\""+ getCompania() +"\",\""+ getComision() +"\",\""+ getActivacion() +"\",\""+ getPersonaAut() +"\",\""+ getDNIAut()
+        +"\",\""+ getTelefonoAut() +"\",\""+ getAnotacion() +"\"");
+    }
 }

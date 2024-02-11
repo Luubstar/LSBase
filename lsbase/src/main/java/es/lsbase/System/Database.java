@@ -11,6 +11,7 @@ public class Database {
 
     static final String directorioTrabajo = System.getProperty("user.dir");
     static final String url = "jdbc:sqlite:"+directorioTrabajo+"/lsbase/base.db";
+    Connection conn;
 
     public static void connect() throws ClassNotFoundException {
         Class.forName("org.sqlite.JDBC");
@@ -29,7 +30,7 @@ public class Database {
                     Patio	text,
                     Puerta	text,
                     Dirección_de_correspondencia	text,
-                    Código_posta	text,
+                    Código_postal	text,
                     Población	text,
                     Provincia	text,
                     CUPS	text,
@@ -47,8 +48,8 @@ public class Database {
                     """;
             Statement stmt = conn.createStatement();
             stmt.execute(sqlStarter);
-
-            System.out.println("Conexión establecida.");
+            stmt.close();
+            conn.close();
         }
         catch (SQLException e){
             System.out.println(e);
@@ -56,6 +57,7 @@ public class Database {
     }
 
     public static Cliente ClientFromResult(ResultSet resultSet) throws SQLException{
+        int ID = resultSet.getInt("ID");
         String nombre = resultSet.getString("Nombre");
         String apellido1 = resultSet.getString("Apellido");
         String apellido2 = resultSet.getString("Apellidos");
@@ -83,7 +85,7 @@ public class Database {
         String telefonoAut = resultSet.getString("Teléfono_autorizado");
         String anotacion = resultSet.getString("Anotacion");
 
-        Cliente c = new Cliente(nombre, apellido1, apellido2, telefono1, telefono2, dni, correoElectronico,
+        Cliente c = new Cliente(ID,nombre, apellido1, apellido2, telefono1, telefono2, dni, correoElectronico,
                         direccionSuministro, patio, puerta, direccionCorrespondencia, codigoPostal,
                         poblacion, provincia, cups, numeroCuenta, anexo, tarifa, consumo, compania,
                         comision, activacion, personaAut, dniAut, telefonoAut, anotacion);
@@ -99,6 +101,8 @@ public class Database {
             while (resultSet.next()) {
                 lista.add(ClientFromResult(resultSet));
             }
+            statement.close();
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -144,9 +148,54 @@ public class Database {
             while (resultSet.next()) {
                 lista.add(ClientFromResult(resultSet));
             }
+
+            statement.close();
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return lista;
+    }
+
+    public static void save(Cliente c){
+        int ID = c.getID();
+        int v = 0;
+        try{
+            Connection connection = DriverManager.getConnection(url);
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT COUNT(*) FROM Clientes WHERE ID = " + ID);
+            v = resultSet.getInt("COUNT(*)");
+            statement.close();
+        
+            if(v == 0){
+                Statement s = connection.createStatement();
+                s.executeQuery("INSERT INTO Clientes VALUES ("+c.toString()+")");
+                s.close();
+            }
+            else{
+                Statement s = connection.createStatement();
+                s.executeQuery("DELETE FROM Clientes WHERE ID = " + ID);
+                s.close();
+
+                Statement s1 = connection.createStatement();
+                s1.executeQuery("INSERT INTO Clientes VALUES ("+c.toString()+")");
+                s1.close();
+            }
+
+            connection.close();
+        }
+        catch(SQLException e){e.printStackTrace();}
+    }
+
+    public static void remove(Cliente c){
+        int ID = c.getID();
+        try{
+            Connection connection = DriverManager.getConnection(url);
+            Statement s = connection.createStatement();
+            s.executeQuery("DELETE FROM Clientes WHERE ID = " + ID);
+            s.close();
+            connection.close();
+        }
+        catch(SQLException e){e.printStackTrace();}
     }
 }

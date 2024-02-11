@@ -3,6 +3,7 @@ import java.io.IOException;
 
 import System.App;
 import System.Cliente;
+import System.Database;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
@@ -94,6 +95,27 @@ public class InputController extends Controller{
 
         btnCancelar.setOnAction(event -> cancelEntry());
         btnLimpiar.setOnAction(event -> clean());
+        btnGuardar.setOnAction(event -> save(c));
+        btnEliminar.setOnAction(event -> remove(c));
+    }
+
+    @FXML
+    public void save(Cliente c){
+        Cliente nc = loadInCliente(c);
+        Database.save(nc);
+        btnCancelar.setDisable(true);
+        btnEliminar.setDisable(true);
+        main.iniciador.changePanel(0);
+        clean();
+    }
+
+    @FXML
+    public void remove(Cliente c){
+        Database.remove(c);
+        btnCancelar.setDisable(true);
+        btnEliminar.setDisable(true);
+        main.iniciador.changePanel(0);
+        clean();
     }
 
     @FXML
@@ -134,5 +156,36 @@ public class InputController extends Controller{
         lineTelefonoAut.setText(c.getTelefonoAut());
         lineDNIAut.setText(c.getDNIAut());
         lineAnotacion.setText(c.getAnotacion());
+    }
+
+    @FXML
+    public Cliente loadInCliente(Cliente c){
+        c.setNombre(lineNombre.getText());
+        c.setApellido1(linePApellido.getText());
+        c.setApellido2(lineSApellido.getText());
+        c.setTelefono1(linePTelefono.getText());
+        c.setTelefono2(lineSTelefono.getText());
+        c.setDNI(lineDNI.getText());
+        c.setCorreoElectronico(lineEmail.getText());
+        c.setDireccionSuministro(lineDireccion.getText());
+        c.setPatio(linePatio.getText());
+        c.setPuerta(linePuerta.getText());
+        c.setDireccionCorrespondencia(lineCorrespondencia.getText());
+        c.setCodigoPostal(Integer.valueOf(lineCodPost.getText()));
+        c.setPoblacion(linePoblacion.getText());
+        c.setProvincia(lineProvincia.getText());
+        c.setCUPS(lineCUPS.getText());
+        c.setNumeroCuenta(lineNumCuenta.getText());
+        c.setAnexo(lineAnexo.getText());
+        c.setTarifa(lineTarifa.getText());
+        c.setConsumo(lineConsumo.getText());
+        c.setCompania(lineCompania.getText());
+        c.setComision(lineComision.getText());
+        c.setActivacion(lineActivacion.getText());
+        c.setPersonaAut(linePersonaAut.getText());
+        c.setTelefonoAut(lineTelefonoAut.getText());
+        c.setDNIAut(lineDNIAut.getText());
+        c.setAnotacion(lineAnotacion.getText());
+        return c;
     }
 }
