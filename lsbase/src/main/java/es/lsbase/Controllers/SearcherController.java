@@ -1,15 +1,14 @@
 package Controllers;
-import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
+import System.App;
 import System.Cliente;
 import System.Database;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -107,10 +106,11 @@ public class SearcherController extends Controller{
     @FXML
     private TextField busquedaTexto;
 
-    private static FXMLLoader getFXML(String fxml) throws IOException {
-        File f = new File("lsbase/src/main/resources/" + fxml + ".fxml");
-        FXMLLoader fxmlLoader = new FXMLLoader(f.toURI().toURL());
-        return fxmlLoader;
+    App main;
+
+    public SearcherController(App a){
+    main = a;
+    a.setSearcher(this);
     }
 
     @FXML
@@ -168,13 +168,8 @@ public class SearcherController extends Controller{
     }
 
     private void SelectClient(Cliente c) throws IOException{
-        FXMLLoader FXMLL = getFXML("input");
-        FXMLL.load();
-        InputController controller = FXMLL.getController();
-
-        FXMLL = getFXML("main");
-        FXMLL.load();
-        Starter s = FXMLL.getController();
+        InputController controller = main.input;
+        Starter s = main.iniciador;
         controller.editEntry(c,s);
     }
 

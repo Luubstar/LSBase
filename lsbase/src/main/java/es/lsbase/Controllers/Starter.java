@@ -3,6 +3,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+import System.App;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Tab;
@@ -19,6 +20,13 @@ public class Starter extends Controller{
     @FXML public Tab tabInput; 
     @FXML public Tab tabNotificaciones; 
 
+    public App main = null; 
+
+    public Starter(App a){
+        main = a;
+        a.setStarter(this);
+    }
+
     private static FXMLLoader getFXML(String fxml) throws IOException {
         File f = new File("lsbase/src/main/resources/" + fxml + ".fxml");
         FXMLLoader fxmlLoader = new FXMLLoader(f.toURI().toURL());
@@ -27,8 +35,8 @@ public class Starter extends Controller{
 
     @FXML
     private void initialize() throws IOException {
-        addToTab(tabInput, "input");
-        addToTab(tabSearcher,"searcher");
+        addToTab(tabInput, "input", new InputController(main));
+        addToTab(tabSearcher,"searcher", new SearcherController(main));
 
         String directorioTrabajo = System.getProperty("user.dir");
         File f = new File(directorioTrabajo + "/lsbase/src/main/resources/homeIcon.png");
@@ -51,9 +59,10 @@ public class Starter extends Controller{
     }
 
     @FXML
-    private void addToTab(Tab t,String fxml) throws IOException
+    private void addToTab(Tab t,String fxml, Controller a) throws IOException
     {
         FXMLLoader loader = getFXML(fxml);
+        loader.setController(a);
         t.setContent(loader.load());
     }
 

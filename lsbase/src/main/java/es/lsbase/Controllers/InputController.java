@@ -1,6 +1,7 @@
 package Controllers;
 import java.io.IOException;
 
+import System.App;
 import System.Cliente;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -72,12 +73,19 @@ public class InputController extends Controller{
     @FXML
     private  Button btnCancelar;
 
+    App main;
+
+    public InputController(App a){
+    main = a;
+    a.setInput(this);
+    }
+
     @FXML
     private void initialize() throws IOException {System.out.print(lineNombre.getText());}
 
     @FXML
     public void editEntry(Cliente c, Starter mainController) throws IOException{
-        mainController.changePanel(2);
+        mainController.changePanel(1);
         System.out.println(btnCancelar.isDisabled());
         btnLimpiar.setDisable(false);
         btnCancelar.setDisable(false);

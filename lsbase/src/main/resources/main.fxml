@@ -37,7 +37,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="715.0" prefWidth="998.0" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Starter">
+<VBox prefHeight="715.0" prefWidth="998.0" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1">
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="497.0" prefWidth="1000.0" VBox.vgrow="ALWAYS">
          <children>

@@ -10,17 +10,23 @@ import java.io.IOException;
 
 import Controllers.InputController;
 import Controllers.SearcherController;
+import Controllers.Starter;
 
 public class App extends Application {
 
     private static Scene scene;
-    public SearcherController table;
-    public InputController editor;
+    public SearcherController searcher;
+    public InputController input;
+    public Starter iniciador;
 
+    public void setStarter(Starter s){iniciador = s;}
+    public void setInput(InputController s){input = s;}
+    public void setSearcher(SearcherController s){searcher = s;}
 
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader loader = getFXML("main");
+        loader.setController(new Starter(this));
         scene = new Scene(loader.load(), 640, 480);
         stage.setScene(scene);
         stage.show();
